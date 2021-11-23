@@ -1,0 +1,61 @@
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin square($value) {
+  width: $value;
+  height: $value;
+}
+@mixin fit($value: cover) {
+  object-fit: $value;
+  -moz-object-fit: $value;
+  -webkit-object-fit: $value;
+}
+@mixin objectImage($type: cover) {
+  width: 100%;
+  height: 100%;
+  object-fit: $type;
+}
+%transition {
+  transition: all 0.2s ease;
+}
+%border-radius {
+  border-radius: 50%;
+}
+@mixin flex() {
+  display: flex;
+}
+@mixin flex-ai-center {
+  @include flex();
+  align-items: center;
+}
+
+@mixin flex-jc($type: center) {
+  @include flex();
+  flex-direction: column;
+  justify-content: $type;
+}
+
+@mixin flex-center($type: space-between) {
+  justify-content: $type;
+  @include flex-ai-center();
+}
+
+@mixin trans_radius {
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+@mixin fontSize($fontSize, $lineHeight: $fontSize) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+@mixin square2($width, $height: $width, $lineHeight: $width) {
+  width: $width;
+  height: $height;
+  line-height: $lineHeight;
+}
