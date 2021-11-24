@@ -1,7 +1,48 @@
-.logo{
-  width: 118px;
-  height: 36px;
-}
-nav ul li{
-  display: inline-block;
+.header-menu {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 10px 0;
+  &.sticky {
+    background-color: #212226;
+  }
+  &__flex {
+    @include flex-ai-center;
+  }
+  &__logo {
+    display: block;
+    @include square2(118px, 36px, 0);
+  }
+  &__bar {
+    @include flex-center($type: right);
+    li {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+      a {
+        color: white;
+        @extend %transition;
+        &:hover {
+          color: $grayLight;
+        }
+      }
+      .social-media {
+        display: block;
+        @include square2(25px);
+        background-color: $blue;
+        @extend %border-radius;
+        @extend %transition;
+        text-align: center;
+        &:hover,
+        &:hover i {
+          color: #0b36ad;
+          background-color: white;
+        }
+      }
+    }
+  }
 }
