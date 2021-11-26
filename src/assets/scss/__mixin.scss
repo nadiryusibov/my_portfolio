@@ -59,3 +59,14 @@
   height: $height;
   line-height: $lineHeight;
 }
+@mixin h2-heading{
+  color: $dark;
+  font-weight: 700;
+  @include fontSize(32px,32.5px);
+}
+@mixin paragraf{
+  font-family: Popins;
+  font-weight: 400;
+  color:$gray;
+  @include fontSize(20px,26px);
+}
